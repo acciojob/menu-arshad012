@@ -1,7 +1,11 @@
+body {
+    background-color: #f1f5f8;
+}
+
 h1 {
     color: #27aedb;
     text-align: center;
-    }
+}
     
 
 button{
@@ -9,4 +13,51 @@ button{
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.filters {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters button {
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: none;
+}
+
+.dishedContainer {
+    width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    /* background-color: #f1f5f8; */
+}
+
+
+.dish-card {
+    display: flex;
+    padding: 10px;
+}
+
+.img-container {
+    width: 25%;
+    background-color: #27aedb;
+    box-sizing: border-box;
+}
+
+.details {
+    width: 75%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.title-price {
+    display: flex;
+    justify-content: space-between;
 }
