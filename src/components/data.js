@@ -1,5 +1,5 @@
 
-export const dishedData = [
+export const dishesData = [
     {
         id: 1,
         title: 'buttermilk pancakes',

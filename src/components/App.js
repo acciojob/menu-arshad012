@@ -1,21 +1,21 @@
 
 import React from "react";
-import { dishedData } from "./data";
+import { dishesData } from "./data";
 import Dish from "./dish";
 import '../styles/App.css';
 
 function App() {
-    const [data, setData] = React.useState(dishedData);
+    const [data, setData] = React.useState(dishesData);
     
     const handleFilter = (e) => {
         const category = (e.target.innerText).toLowerCase();
         
         if(category == 'all') {
-            const filteredData = dishedData;
+            const filteredData = dishesData;
             setData(filteredData);
         }
         else {
-            let filteredData = dishedData.filter((dish) => dish.category == category);
+            let filteredData = dishesData.filter((dish) => dish.category == category);
             setData(filteredData);
         }
     }
@@ -25,9 +25,9 @@ function App() {
         <h1>Our Menu</h1>
         <div className="filters">
             <button onClick={(e) => handleFilter(e)}>All</button>
-            <button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
-            <button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
-            <button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
+            <button onClick={(e) => handleFilter(e)}>Shakes</button>
+            <button onClick={(e) => handleFilter(e)}>Lunch</button>
+            <button onClick={(e) => handleFilter(e)}>Breakfast</button>
         </div>
         <div className="dishedContainer">
             {
@@ -38,3 +38,11 @@ function App() {
 }
 
 export default App;
+
+
+/*
+<button onClick={(e) => handleFilter(e)}>All</button>
+<button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
+<button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
+<button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
+*/
