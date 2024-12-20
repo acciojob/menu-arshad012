@@ -21,22 +21,20 @@ function App() {
     }
 
 
-    return <>
+    return <div id="main">
         <h1>Our Menu</h1>
         <div className="filters">
             <button onClick={(e) => handleFilter(e)}>All</button>
-            <button onClick={(e) => handleFilter(e)}>Breakfast</button>
-            <button onClick={(e) => handleFilter(e)}>Lunch</button>
-            <button onClick={(e) => handleFilter(e)}>Shakes</button>
+            <button id="#filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
+            <button id="#filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
+            <button id="#filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
         </div>
         <div className="dishedContainer">
             {
                 data.map((dish) => <Dish key={dish.id} details={dish} />)
             }
         </div>
-    </>
+    </div>
 }
 
 export default App;
-
-{/* <p>Now I can render any React component on any DOM node I want using ReactDOM.render</p> */}
