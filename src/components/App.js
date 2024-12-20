@@ -25,9 +25,9 @@ function App() {
         <h1>Our Menu</h1>
         <div className="filters">
             <button onClick={(e) => handleFilter(e)}>All</button>
-            <button id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
-            <button id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
-            <button id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
+            <button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
+            <button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
+            <button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
         </div>
         <div className="dishedContainer">
             {
