@@ -1,14 +1,17 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { dishesData } from "./data";
 import Dish from "./dish";
 import '../styles/App.css';
 
 function App() {
     const [data, setData] = React.useState(dishesData);
+    const [hideBtn, setHideBtn] = useState('all');
     
     const handleFilter = (e) => {
-        const category = (e.target.innerText).toLowerCase();
+        const category = e.target.value;
+        
+        setHideBtn(category);
         
         if(category == 'all') {
             const filteredData = dishesData;
@@ -24,10 +27,10 @@ function App() {
     return <div id="main">
         <h1>Our Menu</h1>
         <div className="filters">
-            <button onClick={(e) => handleFilter(e)}>All</button>
-            <button data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
-            <button data-test-id="menu-item-lunch" id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
-            <button data-test-id="menu-item-shakes" id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
+            <button value='all' style={{display: hideBtn == 'all' ? 'none' : 'block'}} onClick={(e) => handleFilter(e)}>All</button>
+            <button value='breakfast' style={{display: hideBtn == 'breakfast' ? 'none' : 'block'}} data-test-id="menu-item-breakfast" id="filter-btn-1" onClick={(e) => handleFilter(e)}>Breakfast</button>
+            <button value='lunch' style={{display: hideBtn == 'lunch' ? 'none' : 'block'}} data-test-id="menu-item-lunch" id="filter-btn-2" onClick={(e) => handleFilter(e)}>Lunch</button>
+            <button value='shakes' style={{display: hideBtn == 'shakes' ? 'none' : 'block'}} data-test-id="menu-item-shakes" id="filter-btn-3" onClick={(e) => handleFilter(e)}>Shakes</button>
         </div>
         <div className="dishedContainer">
             {

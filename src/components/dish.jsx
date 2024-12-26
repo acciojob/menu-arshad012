@@ -19,6 +19,7 @@ const Dish = ({details}) => {
             <div className="description">
                 {desc}
             </div>
+            <div>Category: {category}</div>
         </div>
     </div>
 }
